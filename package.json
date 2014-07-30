@@ -1,0 +1,39 @@
+{
+  "name": "level-create-batch",
+  "version": "1.0.0",
+  "description": "insert a batch of keys if and only if none of the keys already exist",
+  "main": "index.js",
+  "dependencies": {
+    "level-lock": "~1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^2.13.2",
+    "level-test": "~1.6.3",
+    "level-create": "~1.1.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/level-create-batch.git"
+  },
+  "homepage": "https://github.com/substack/level-create-batch",
+  "keywords": [
+    "level",
+    "leveldb",
+    "batch",
+    "key",
+    "value",
+    "insert",
+    "create",
+    "exist",
+    "exists"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}
