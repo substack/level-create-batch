@@ -39,6 +39,7 @@ module.exports = function (db, rows, cb) {
             }
             if (res || (err && err.type !== 'NotFoundError')) {
                 unlock();
+                failed = true;
                 return cb(error('EXISTS', 'key already exists'));
             }
             if (-- pending === 0) insert();
