@@ -41,7 +41,7 @@ module.exports = function (db, rows, cb) {
         });
     })(rows[i]);
     
-    if (pending === 0) insert();
+    if (pending === 0) process.nextTick(insert);
     
     function insert () {
         var updates = [];
