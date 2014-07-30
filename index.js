@@ -23,14 +23,18 @@ module.exports = function (db, rows, cb) {
     }
     
     var pending = 0;
+    var failed = false;
+    
     for (var i = 0; i < rows.length; i++) (function (row) {
         if (!row) return;
         if (row.type === 'put') return;
         pending ++;
         
         db.get(row.key, function (err, res) {
+            if (failed) return;
             if (err && err.type !== 'NotFoundError') {
                 unlock();
+                failed = true;
                 return cb(err);
             }
             if (res || (err && err.type !== 'NotFoundError')) {

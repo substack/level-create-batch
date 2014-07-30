@@ -16,7 +16,7 @@ test('database error', function (t) {
     
     var rows = [
         { key: 'substack', value: { bio: 'beep boop' } },
-        { key: 'index', value: 3000 },
+        { key: 'index', value: 3000 }
     ];
     batch(db, rows, function (err) {
         t.equal(err.code, 'ENOBLAH');
