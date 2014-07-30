@@ -2,6 +2,8 @@
 
 insert a batch of keys if and only if none of the keys already exist
 
+[![build status](https://secure.travis-ci.org/substack/level-create-batch.png)](http://travis-ci.org/substack/level-create-batch)
+
 # example
 
 Suppose you want to create a user account for a website using leveldb.
