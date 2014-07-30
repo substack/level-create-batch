@@ -19,7 +19,7 @@ var rows = [
         value: { bio: argv.bio }
     },
     {
-        key: 'login!basic!' + argv.user,
+        key: 'login!' + argv.user,
         value: { salt: salt, hash: hash }
     }
 ];

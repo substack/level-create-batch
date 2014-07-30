@@ -71,3 +71,37 @@ batch(db, rows, function (err) {
 });
 ```
 
+# methods
+
+``` js
+var batch = require('level-create-batch')
+```
+
+## batch(db, rows, cb)
+
+Insert a batch of `rows` into the leveldb database `db`.
+
+`cb(err)` fires with any errors when the batch finishes or is aborted.
+Aside from ordinary database errors, `err.code` might be:
+
+* 'LOCKED' - when any of the requested keys are locked
+* 'EXISTS' - when any of the requested keys already exists
+
+If a row has a `type` property explicitly set to `'put'`, the data will be
+inserted whether or not a key already exists. The keys will all still be locked
+in any case until the operation finishes.
+
+Otherwise the default row type is `'create'`, which fails if a key already
+exists.
+
+# install
+
+With [npm](https://npmjs.org/package/level-create-batch) do:
+
+```
+npm install level-create-batch
+```
+
+# license
+
+MIT
