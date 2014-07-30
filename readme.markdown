@@ -71,6 +71,16 @@ batch(db, rows, function (err) {
 });
 ```
 
+Now we can use this program to create accounts, but the program will properly
+fail to create an account if the username is already taken:
+
+```
+$ node useradd.js -u substack -p beepboop -b whatever
+$ node useradd.js -u trex -p dino -b rawr
+$ node useradd.js -u substack -p hax -b h4x3d
+{ [Error: key already exists] code: 'EXISTS' }
+```
+
 # methods
 
 ``` js
