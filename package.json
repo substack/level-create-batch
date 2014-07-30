@@ -1,6 +1,6 @@
 {
   "name": "level-create-batch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "insert a batch of keys if and only if none of the keys already exist",
   "main": "index.js",
   "dependencies": {
