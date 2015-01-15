@@ -106,6 +106,9 @@ in any case until the operation finishes.
 Otherwise the default row type is `'create'`, which fails if a key already
 exists.
 
+Rows can individually have `keyEncoding` and `valueEncoding` properties, which
+`db.batch()` respects.
+
 # install
 
 With [npm](https://npmjs.org/package/level-create-batch) do:
