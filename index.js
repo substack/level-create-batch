@@ -53,7 +53,13 @@ module.exports = function (db, rows, cb) {
         for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
             if (!row) continue;
-            updates.push({ type: 'put', key: row.key, value: row.value });
+            updates.push({
+              type: 'put',
+              key: row.key,
+              value: row.value,
+              keyEncoding: row.keyEncoding,
+              valueEncoding: row.valueEncoding
+            });
         }
         db.batch(updates, function (err) {
             unlock();
